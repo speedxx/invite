@@ -56,15 +56,18 @@ except ValueError:
     exit()
 
 print("What permissions should the bot have?")
-print("Input 8 for default permissions (Administrator)")
+print("Input '8' for default permissions (Administrator)")
 print("Input 'Everything' for all the permissions")
+print("Input 'Nothing' for no permissions")
 print("Input 'General' for all general permissions")
 print("Input 'Text' for all text permissions")
 print("Input 'Voice' for all voice permissions")
 permissions = input()
 
 if permissions == "8":
-     print("Here is your invite URL: " + "https://discordapp.com/oauth2/authorize?client_id=" + str(id) + "&permissions=" + str(ADMINISTRATOR) + "&scope=bot")
+    print("Here is your invite URL: " + "https://discordapp.com/oauth2/authorize?client_id=" + str(id) + "&permissions=" + str(ADMINISTRATOR) + "&scope=bot")
+elif permissions == "Nothing":
+    print("Here is your invite URL: " + "https://discordapp.com/oauth2/authorize?client_id=" + str(id) + "&permissions=0&scope=bot")
 elif permissions == "Everything":
     print("Here is your invite URL: " + "https://discordapp.com/oauth2/authorize?client_id=" + str(id) + "&permissions=" + str(EVERYTHING) + "&scope=bot")
 elif permissions == "General":
